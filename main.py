@@ -9,7 +9,7 @@ X, y = iris.get_train_target_data()
 
 red1 = AdalineGD(n_iter=10, eta=0.01).fit(X, y)
 
-fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(10,4))
+fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10,4))
 
 # Gráfico Izquierda: El error es mayor en cada epoca. No minimiza la funcion de coste.
 ax[0].plot(range(1, len(red1.cost_) + 1), np.log10(red1.cost_), marker='o')

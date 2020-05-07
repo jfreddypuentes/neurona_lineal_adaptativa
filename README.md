@@ -14,3 +14,6 @@ X, y = iris.get_train_target_data()
 ~~~
 red1 = AdalineGD(n_iter=10, eta=0.01).fit(X, y)
 ~~~
+
+### Resultados con tasas de aprendizaje distintas
+![Resultados](/tasa_aprendizaje_epocas.png)
