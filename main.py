@@ -7,7 +7,13 @@ import iris_data as iris
 # Obtencion de datos
 X, y = iris.get_train_target_data()
 
-red1 = AdalineGD(n_iter=10, eta=0.01).fit(X, y)
+#Normalizando los datos. (media 0, std 1)
+X_std = np.copy(X)
+X_std[:,0] = (X[:,0] - X[:,0].mean()) / X[:,0].std()
+X_std[:,1] = (X[:,1] - X[:,1].mean()) / X[:,1].std()
+
+#red1 = AdalineGD(n_iter=10, eta=0.01).fit(X, y)
+red1 = AdalineGD(n_iter=10, eta=0.01).fit(X_std, y)
 
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10,4))
 
